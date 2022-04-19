@@ -1,0 +1,18 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "PEPSI 300ml",
+      "ingredients": "",
+      "price": 4.9,
+      "type": "Napój"
+    },
+    {
+      "id": 2,
+      "name": "COCA-COLA 300ml",
+      "ingredients": "nie zalecamy z uwagi na powiązania z rosyjską armią",
+      "price": 4.9,
+      "type": "Napój"
+    }
+  ]
+}

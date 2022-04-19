@@ -1,0 +1,18 @@
+{
+    "recipes":[
+        {
+            "id":1,
+            "name":"FRYTKI L",
+            "ingredients": "",
+            "price": 7.50,
+            "type": "Dodatek"
+        },
+        {
+            "id":1,
+            "name":"FRYTKI XL",
+            "ingredients": "Frytki ze 100% ziemniaków",
+            "price": 9.50,
+            "type": "Dodatek"
+        }
+    ]
+}

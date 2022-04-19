@@ -1,0 +1,18 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "CHICKEN SALAD",
+      "ingredients": "mix sałat z vinegrette, pomidory koktajlowe, ser grana padano, prażony słonecznik i dynia, sos musztardowo-miodowy z orzechami, nachosy, kurczak w autorskiej panierce",
+      "price": 17.5,
+      "type": "Sałatka"
+    },
+    {
+      "id": 2,
+      "name": "PRZYSMAK CHOROSZCZY",
+      "ingredients": "mix sałat z vinegrette, pomidory koktajlowe, kurczak wege, landarynka, kwaśna kapusta, banany, kiełbasa, kaszanka, jajko",
+      "price": 22.9,
+      "type": "Sałatka"
+    }
+  ]
+}

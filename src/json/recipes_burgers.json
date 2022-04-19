@@ -1,0 +1,74 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Standard",
+      "ingredients": "100% wołowiny, sos biały, sałata lodowa, ser cheddar, ogórek kiszony, pomidor, cebula",
+      "price": 21.9,
+      "type": "Burger"
+    },
+    {
+      "id": 2,
+      "name": "WIEJSKI",
+      "ingredients": "100% wołowiny, sos biały, sałata lodowa, jajo sadzone, boczek, pomidor, ogórek kiszony, cebula",
+      "price": 22.9,
+      "type": "Burger"
+    },
+    {
+      "id": 3,
+      "name": "SUPER",
+      "ingredients": "100% wołowiny, sos biały, sałata lodowa, jajo sadzone, boczek, pomidor, ogórek kiszony, cebula",
+      "price": 21.9,
+      "type": "Burger"
+    },
+    {
+      "id": 4,
+      "name": "WŚCIEKŁY WĄŻ",
+      "ingredients": "100% wołowiny, sos biały, sałata lodowa, jajo sadzone, boczek, pomidor, ogórek kiszony, cebula",
+      "price": 21.9,
+      "type": "Burger"
+    },
+    {
+      "id": 5,
+      "name": "WIZYTA W BELWEDERZE",
+      "ingredients": "100% wołowiny, sos biały, sałata lodowa, jajo sadzone, boczek, pomidor, ogórek kiszony, cebula",
+      "price": 21.9,
+      "type": "Burger"
+    },
+    {
+      "id": 5,
+      "name": "WIZYTA W BELWEDERZE",
+      "ingredients": "100% wołowiny, sos biały, sałata lodowa, jajo sadzone, boczek, pomidor, ogórek kiszony, cebula",
+      "price": 21.9,
+      "type": "Burger"
+    },
+    {
+      "id": 5,
+      "name": "WIZYTA W BELWEDERZE",
+      "ingredients": "100% wołowiny, sos biały, sałata lodowa, jajo sadzone, boczek, pomidor, ogórek kiszony, cebula",
+      "price": 21.9,
+      "type": "Burger"
+    },
+    {
+      "id": 5,
+      "name": "WIZYTA W BELWEDERZE",
+      "ingredients": "100% wołowiny, sos biały, sałata lodowa, jajo sadzone, boczek, pomidor, ogórek kiszony, cebula",
+      "price": 21.9,
+      "type": "Burger"
+    },
+    {
+      "id": 5,
+      "name": "WIZYTA W BELWEDERZE",
+      "ingredients": "100% wołowiny, sos biały, sałata lodowa, jajo sadzone, boczek, pomidor, ogórek kiszony, cebula",
+      "price": 21.9,
+      "type": "Burger"
+    },
+    {
+      "id": 5,
+      "name": "WIZYTA W BELWEDERZE",
+      "ingredients": "100% wołowiny, sos biały, sałata lodowa, jajo sadzone, boczek, pomidor, ogórek kiszony, cebula",
+      "price": 21.9,
+      "type": "Burger"
+    }
+  ]
+}
