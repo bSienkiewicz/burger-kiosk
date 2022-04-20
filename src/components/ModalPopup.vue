@@ -47,7 +47,7 @@
                 </h5>
               </div>
               <div class="col-3 text-end pe-3 py-2">
-                <h5 class="fw-bold m-0">{{ item.cena.toFixed(2) }}</h5>
+                <h5 class="fw-bold m-0">{{ item.cena.toFixed(2) }}zł</h5>
               </div>
             </div>
           </div>
@@ -56,11 +56,11 @@
       <div class="row px-3 pt-3">
         <div class="col-5 text-start"><h5>Suma:</h5></div>
         <div class="col-7 text-end pe-3">
-          <h5 class="fw-bold">{{ this.$store.state.total.toFixed(2) }}</h5>
+          <h5 class="fw-bold">{{ this.$store.state.total.toFixed(2) }}zł</h5>
         </div>
       </div>
       <div class="row pt-3">
-        <div class="col-6">
+        <div class="col-12">
           <button
             v-if="Object.keys(this.$store.state.receipt).length > 0"
             class="button-82-pushable"
@@ -73,11 +73,11 @@
             <span
               class="button-82-front text"
               style="font-family: UniSansHeavyIt"
-              >PŁATNOŚĆ KARTĄ</span
+              >ZAPŁAĆ</span
             >
           </button>
         </div>
-        <div class="col-6">
+        <!-- <div class="col-6">
           <button
             v-if="Object.keys(this.$store.state.receipt).length > 0"
             class="button-82-pushable"
@@ -93,7 +93,7 @@
               >PŁATNOŚĆ GOTÓWKĄ</span
             >
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -109,23 +109,29 @@ export default {
     },
     completeOrder(paymentMethod) {
       let timeLeft = 8;
+      // POTNIJ POZYCJE DO TABELI
+
       let pozycje = "";
       for (let i = 0; i < this.$store.state.receipt.length; i++) {
         pozycje += this.$store.state.receipt[i].id + ",";
       }
       let pozycjeSliced = pozycje.slice(0, -1);
-      console.log(pozycjeSliced);
+
+      console.log("Ilość pozycji: " + this.$store.state.receipt.length);
       this.$store.commit("setPaymentMethod", paymentMethod);
       axios({
         method: "post",
         url: this.$store.state.dbURL + "/post/zamowienia",
         data: {
           pozycje: pozycjeSliced,
+          ilosc_pozycji: this.$store.state.receipt.length,
           kwota: this.$store.state.total.toFixed(2),
-          metoda_platnosci: this.$store.state.paymentMethod,
         },
-      }).then(() => {
+      }).then((response) => {
         console.log("Wykonano post");
+        // TODO: dodać wyjątek errora
+        this.$store.commit("dbZamowieniaUpdate", response);
+        document.getElementById("burgir-audio").play();
       });
       document.getElementById("end-screen").classList.remove("no-display");
       let timerFunction = setInterval(function () {
@@ -137,12 +143,6 @@ export default {
         document.getElementById("timer-span").innerHTML = timeLeft;
         timeLeft--;
       }, 1000);
-      axios
-        .get(this.$store.state.dbURL + "/get/zamowienia")
-        .then((response) => {
-          this.$store.commit("dbZamowieniaUpdate", response);
-          document.getElementById("burgir-audio").play();
-        });
     },
   },
 };

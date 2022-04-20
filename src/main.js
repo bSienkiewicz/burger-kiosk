@@ -16,8 +16,8 @@ function countTotal(receipt) {
 const store = createStore({
   state() {
     return {
-      dbURL: "http://localhost:3000/api/v1",
-      // dbURL: "http://projectburger.herokuapp.com/api/v1",
+      // dbURL: "http://localhost:3000/api/v1",
+      dbURL: "http://projectburger.herokuapp.com/api/v1",
       dbState: {
         menu: [],
         skladniki: [],
@@ -108,7 +108,8 @@ const store = createStore({
       console.log("[INFO] Zaktualizowano składniki...");
     },
     dbZamowieniaUpdate(state, el) {
-      state.orderNumber = el.data.data[el.data.data.length - 1].id;
+      // state.orderNumber = el.data.data[el.data.data.length - 1].id;
+      state.orderNumber = el.data.order_id;
       console.log("[INFO] Zaktualizowano zamówienia...");
     },
     dbPogodaUpdate(state, el) {

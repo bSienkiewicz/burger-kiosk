@@ -22,9 +22,8 @@
         font-weight: bold;
       "
     >
-      <div class="col">Qty</div>
+      <div class="col-2">Qty</div>
       <div class="col-6">Nazwa</div>
-      <div class="col">Kcal</div>
       <div class="col text-end">Cena</div>
     </div>
     <div
@@ -40,7 +39,6 @@
           <div class="row g-0 fs-5 pt-3" style="padding-right: 15px">
             <div class="col-2 fw-bold">1x</div>
             <div class="col-6 fw-bold">{{ item.nazwa }}</div>
-            <div class="col">tba</div>
             <div class="col text-end fw-bold">{{ item.cena.toFixed(2) }}</div>
           </div>
           <div class="row g-0 fs-5 fw-bold pb-3">
