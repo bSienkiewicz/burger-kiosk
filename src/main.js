@@ -17,7 +17,7 @@ const store = createStore({
   state() {
     return {
       // dbURL: "http://localhost:3000/api/v1",
-      dbURL: "http://projectburger.herokuapp.com/api/v1",
+      dbURL: "http://projectburger-en.herokuapp.com/api/v1",
       dbState: {
         menu: [],
         skladniki: [],
