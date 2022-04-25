@@ -5,8 +5,15 @@
     @click="this.$store.commit('addToReceipt', item)"
   >
     <div class="recipe-item">
-      <div class="d-flex flex-row">
-        <img :src="getimg(item.miniatura)" alt="" class="mini-img" />
+      <div class="d-flex flex-row h-100">
+        <div class="h-100 w-25">
+          <img :src="getimg(item.miniatura)" alt="" class="mini-img" />
+          <!-- <img
+            src="https://drive.google.com/thumbnail?id=18J2BP9cblA_xDZZG5F5yVNiInjn9AL2E"
+            class="mini-img"
+            alt=""
+          /> -->
+        </div>
         <div class="flex-row w-75 justify-content-between p-3">
           <div class="flex-col flex-grow-1 w-50">
             <h4
@@ -126,9 +133,9 @@ export default {
 }
 
 .mini-img {
-  position: relative;
-  width: 25%;
   height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .button-52 {

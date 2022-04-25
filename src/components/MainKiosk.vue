@@ -3,7 +3,6 @@
     <div id="loader-element">
       <div class="loader"></div>
     </div>
-    <div class="titlebar d-flex flex-row justify-content-end"></div>
     <div class="mainBody content">
       <div id="left-section" class="selection-section d-flex flex-col h-100">
         <div class="welcome-bar pt-5 ps-5 pe-5 pb-2 bg-white">
@@ -313,7 +312,7 @@ img {
 
 .mainBody {
   background: #2a2c2e;
-  height: 98%;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;

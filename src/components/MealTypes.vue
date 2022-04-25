@@ -9,14 +9,14 @@
           class="meal-type-container"
           @click="$emit('changeActive', 'Polecane')"
           :style="{
-            'background-image': 'url(' + getImg('logo_circ.png') + ')',
+            'background-image': 'url(' + getImg('logo_circ_full.png') + ')',
           }"
         ></div>
       </div>
       <h4 class="category-title">Polecane</h4>
     </div>
 
-    <div
+    <!-- <div
       class="margin-end flex-col"
       @click="this.$store.commit('changeCategory', 'Nowości')"
     >
@@ -27,8 +27,8 @@
           :style="{ 'background-image': 'url(' + getImg('cat_burg.jpg') + ')' }"
         ></div>
       </div>
-      <h4 class="category-title">Nowości</h4>
-    </div>
+      <h4 class="category-title">Nowości</h4> 
+    </div> -->
 
     <div
       class="margin-end flex-col"

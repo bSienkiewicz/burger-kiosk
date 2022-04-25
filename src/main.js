@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import { createStore } from "vuex";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "@/assets/style/style.css";
 
 function countTotal(receipt) {
   let total = 0;
@@ -17,7 +18,7 @@ const store = createStore({
   state() {
     return {
       // dbURL: "http://localhost:3000/api/v1",
-      dbURL: "http://projectburger-en.herokuapp.com/api/v1",
+      dbURL: "http://projectburger-eu.herokuapp.com/api/v1",
       dbState: {
         menu: [],
         skladniki: [],

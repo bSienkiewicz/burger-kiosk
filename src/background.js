@@ -1,9 +1,11 @@
 "use strict";
 
 import { app, protocol, BrowserWindow } from "electron";
+const path = require("path");
 import { createProtocol } from "vue-cli-plugin-electron-builder/lib";
 import installExtension, { VUEJS3_DEVTOOLS } from "electron-devtools-installer";
 const isDevelopment = process.env.NODE_ENV !== "production";
+const iconPath = path.join(__dirname, "assets", "icons", "logo.ico");
 
 app.disableHardwareAcceleration();
 
@@ -13,18 +15,20 @@ protocol.registerSchemesAsPrivileged([
 ]);
 
 async function createWindow() {
+  console.log("Path: " + __dirname);
   // Create the browser window.
   const win = new BrowserWindow({
     width: 1580,
     height: 720,
     frame: false,
+    title: __dirname + "src/assets/icons/logo.ico",
+    icon: iconPath,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
       contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION,
     },
-    icon: "./assets/photos/icons/logo.ico",
   });
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
@@ -40,16 +44,12 @@ async function createWindow() {
 
 // Quit when all windows are closed.
 app.on("window-all-closed", () => {
-  // On macOS it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== "darwin") {
     app.quit();
   }
 });
 
 app.on("activate", () => {
-  // On macOS it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
   if (BrowserWindow.getAllWindows().length === 0) createWindow();
 });
 
