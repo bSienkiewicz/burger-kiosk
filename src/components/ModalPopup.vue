@@ -2,7 +2,17 @@
   <div id="modal-container">
     <div class="modal-popup">
       <div class="modal-popup-ins">
-        <button class="close-btn" @click="hideReceipt">X</button>
+        <div class="close-btn" @click="hideReceipt()">
+          <button class="button-82-pushable" role="button">
+            <span class="button-82-shadow"></span>
+            <span class="button-82-edge"></span>
+            <span
+              class="button-82-front text"
+              style="font-family: UniSansHeavyIt"
+              >X</span
+            >
+          </button>
+        </div>
       </div>
       <div class="header" style="font-family: UniSansHeavyIt">
         <h1>Podsumowanie</h1>
@@ -121,7 +131,7 @@ export default {
       this.$store.commit("setPaymentMethod", paymentMethod);
       axios({
         method: "post",
-        url: this.$store.state.dbURL + "/post/zamowienia",
+        url: process.env.VUE_APP_API_URL + "/zamowienia",
         data: {
           pozycje: pozycjeSliced,
           ilosc_pozycji: this.$store.state.receipt.length,
@@ -168,6 +178,9 @@ h5 {
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
+  animation-name: blur;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
   position: fixed;
   top: 0;
   left: 0;
@@ -183,19 +196,19 @@ h5 {
   height: 600px;
   padding: 30px;
   border-radius: 10px;
+  position: relative;
 }
 
 .close-btn {
-  background: linear-gradient(0deg, #c3800c, #f6a820);
-  border: none;
   width: 100px;
   height: 50px;
   border-radius: 30px;
   color: white;
   font-size: 20px;
   float: right;
-  margin-right: -50px;
-  margin-top: -50px;
+  right: 30px;
+  top: 28px;
+  position: absolute;
 }
 
 .cont::-webkit-scrollbar-track {
@@ -212,5 +225,16 @@ h5 {
 .cont::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: rgb(180, 180, 180);
+}
+
+@keyframes blur {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+  }
 }
 </style>

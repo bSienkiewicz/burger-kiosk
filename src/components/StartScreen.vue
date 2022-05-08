@@ -5,26 +5,54 @@
 <script>
 import axios from "axios";
 export default {
+  mounted() {},
   methods: {
     toggleClicked() {
+      this.login();
       document.getElementById("start-screen").classList.add("hide");
       axios
-        .get(
-          "https://api.openweathermap.org/data/2.5/weather?lat=51.935619&lon=15.506186&appid=82e5046a764dec9cec13d3c77991f9ea&units=metric&lang=pl"
-        )
-        .then((response) => {
-          this.$store.commit("dbPogodaUpdate", response);
-          return axios.get(this.$store.state.dbURL + "/get/skladniki");
-        })
+        .get(`${process.env.VUE_APP_API_URL}/skladniki`)
         .then((response) => {
           this.$store.commit("dbSkladnikiUpdate", response);
-          return axios.get(this.$store.state.dbURL + "/get/menu");
+          return axios.get(`${process.env.VUE_APP_API_URL}/menu`);
         })
         .then((response) => {
           this.$store.commit("dbMenuUpdate", response);
-          document.getElementById("loader-element").classList.add("d-none");
+          document
+            .getElementById("loader-element")
+            .classList.add("hide-loader");
         })
-        .catch((error) => console.log(error.data));
+        .catch(() => {
+          document.getElementById("loader-element").classList.add("d-none");
+          document.getElementById("modal-cont").classList.add("showModal");
+        });
+    },
+    login() {
+      console.log(process.env.VUE_APP_LOGIN);
+      const data = {
+        username: process.env.VUE_APP_LOGIN,
+        password: process.env.VUE_APP_PASSWORD,
+      };
+      const headers = {
+        "Content-Type": "application/json",
+      };
+
+      axios
+        .post(`${process.env.VUE_APP_API_URL}/login`, data, {
+          headers: headers,
+        })
+        .then((response) => {
+          if (response.status == 200) {
+            localStorage.setItem("jwt", response.data.accessToken);
+            this.$store.state.isAuthenticated = true;
+            this.error = false;
+            console.log(response);
+          }
+        })
+        .catch((error) => {
+          throw error;
+          // window.location.reload();
+        });
     },
   },
 };

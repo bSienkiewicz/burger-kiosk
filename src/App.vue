@@ -1,5 +1,6 @@
 <template>
   <StartScreen />
+  <ModalInfo />
   <EndScreen />
   <MainKiosk />
 </template>
@@ -8,6 +9,7 @@
 import MainKiosk from "./components/MainKiosk.vue";
 import StartScreen from "./components/StartScreen.vue";
 import EndScreen from "./components/EndScreen.vue";
+import ModalInfo from "./components/ModalInfo.vue";
 
 export default {
   name: "App",
@@ -15,6 +17,7 @@ export default {
     EndScreen,
     StartScreen,
     MainKiosk,
+    ModalInfo,
   },
 };
 </script>
@@ -57,11 +60,8 @@ export default {
 
 :root {
   --slight-gray: #424144;
-  --left-section-bg: #ffc175;
-  --dark-not-black: #4f4fec;
   --not-quite-black: #eee;
   --topbar: #eee;
-  /* #e79c1c, #e29d26 */
 }
 
 #app {

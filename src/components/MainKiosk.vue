@@ -12,31 +12,6 @@
               Witaj, łakomczuchu!
             </h1>
           </div>
-
-          <div class="welcome-bar-right flex-row align-items-center">
-            <div class="weather flex-row align-items-center">
-              <img
-                src="../assets/photos/mini/sun_ico.png"
-                style="
-                  height: 48px;
-                  filter: invert(44%) sepia(78%) saturate(3333%)
-                    hue-rotate(3deg) brightness(105%) contrast(104%);
-                "
-                alt=""
-              />
-              <h3 class="m-0 ps-2">
-                <!-- {{ this.$store.state.openWeather.main }}°C -->
-                10°C
-              </h3>
-            </div>
-            <!-- <div class="basket ps-5">
-              <img
-                src="../assets/photos/mini/cart_ico.png"
-                style="height: 35px"
-                alt=""
-              />
-            </div> -->
-          </div>
         </div>
         <div
           class=""
@@ -135,11 +110,21 @@ img {
   width: 100vw;
   height: 100vh;
   background: #ffffffbb;
+  backdrop-filter: blur(3px);
   position: absolute;
   z-index: 50;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.4 ease-in-out;
+}
+
+.hide-loader {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  backdrop-filter: blur(3px) !important;
 }
 
 .loader {

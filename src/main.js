@@ -3,6 +3,11 @@ import App from "./App.vue";
 import { createStore } from "vuex";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@/assets/style/style.css";
+import axios from "axios";
+
+axios.defaults.headers.common["Authorization"] =
+  "Bearer " + localStorage.getItem("jwt");
+axios.defaults.headers.post["Content-Type"] = "application/json";
 
 function countTotal(receipt) {
   let total = 0;
@@ -17,8 +22,9 @@ function countTotal(receipt) {
 const store = createStore({
   state() {
     return {
-      // dbURL: "http://localhost:3000/api/v1",
-      dbURL: "http://projectburger-eu.herokuapp.com/api/v1",
+      isAuthenticated: false,
+      dbURL: "http://localhost:3000/api/v1",
+      // dbURL: "http://projectburger-eu.herokuapp.com/api/v1",
       dbState: {
         menu: [],
         skladniki: [],
