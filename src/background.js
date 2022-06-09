@@ -21,8 +21,8 @@ async function createWindow() {
     width: 1580,
     height: 720,
     frame: false,
-    title: __dirname + "src/assets/icons/logo.ico",
-    icon: iconPath,
+    title: "Project Burger",
+    icon: __dirname + "src/assets/icons/logo.ico",
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info

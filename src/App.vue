@@ -22,40 +22,40 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=ABeeZee&family=Fredoka&display=swap");
 
 @font-face {
   font-family: Familiar;
-  src: url("./assets/fonts/Familiar_Pro_Bold.otf");
+  src: url("@/assets/fonts/Familiar_Pro_Bold.otf");
 }
 @font-face {
   font-family: PhysisBlack;
-  src: url("./assets/fonts/RNSPhysis-Black.ttf");
+  src: url("@/assets/fonts/RNSPhysis-Black.ttf");
 }
 @font-face {
   font-family: PhysisBold;
-  src: url("./assets/fonts/RNSPhysis-Bold.ttf");
+  src: url("@/assets/fonts/RNSPhysis-Bold.ttf");
 }
 
 @font-face {
   font-family: PhysisThin;
-  src: url("./assets/fonts/RNSPhysis-Thin.ttf");
+  src: url("@/assets/fonts/RNSPhysis-Thin.ttf");
 }
 
 @font-face {
   font-family: PhysisLight;
-  src: url("./assets/fonts/RNSPhysis-Light.ttf");
+  src: url("@/assets/fonts/RNSPhysis-Light.ttf");
 }
 
 @font-face {
   font-family: PhysisBold;
-  src: url("./assets/fonts/RNSPhysis-Medium.ttf");
+  src: url("@/assets/fonts/RNSPhysis-Medium.ttf");
 }
 
 @font-face {
   font-family: UniSansHeavyIt;
-  src: url("./assets/fonts/UniSansHeavyIt.otf");
+  src: url("@/assets/fonts/UniSansHeavyIt.otf");
 }
 
 :root {

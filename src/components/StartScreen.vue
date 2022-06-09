@@ -28,9 +28,8 @@ export default {
         });
     },
     login() {
-      console.log(process.env.VUE_APP_LOGIN);
       const data = {
-        username: process.env.VUE_APP_LOGIN,
+        email: process.env.VUE_APP_LOGIN,
         password: process.env.VUE_APP_PASSWORD,
       };
       const headers = {

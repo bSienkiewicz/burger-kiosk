@@ -1,7 +1,7 @@
 <template>
   <div id="end-screen" class="no-display">
     <audio id="burgir-audio">
-      <source src="../assets/music/burgir2.mp3" type="audio/mp3" />
+      <source src="@/assets/music/burgir2.mp3" type="audio/mp3" />
     </audio>
     <div class="w-100 text-center" style="margin-top: 10%">
       <h1 style="font-size: 4rem">ŚWIETNY WYBÓR!</h1>
@@ -10,12 +10,10 @@
     <div class="w-100 text-center">
       <h1 class="mt-5">Twój numer:</h1>
       <div class="number-div">
-        <h1 style="font-size: 5rem">{{ this.$store.state.orderNumber }}</h1>
+        <h1 style="font-size: 5rem">
+          {{ this.$store.state.orderNumber.toString().slice(-2) }}
+        </h1>
       </div>
-    </div>
-    <div class="w-100 text-center">
-      <h4>Przewidywany czas oczekiwania:</h4>
-      <h4>~37 min</h4>
     </div>
     <div class="rbtext me-4 mb-4">
       <h5>Powrót za <span id="timer-span" class="fs-2 px-2">9</span> sek.</h5>
