@@ -11,6 +11,10 @@ Burger Kiosk is a Vue-based project developed as an Electron app, forming part o
 # How it looks
 ![Kiosk GIF](https://github.com/bSienkiewicz/burger-kiosk/assets/50502786/06d8ddad-6ccd-479c-8c98-fae1705d9ab5)
 
+# ❗Why login credentials are not in the .env file?
+Because that was the professor's requirement. 
+This login data had to be somewhere in the code to prove that a database was attached to the project and that the data in the application was not random.
+
 # Setup and Installation
 This project is not intended to be downloaded or ran on its own, as it requires additional setup including Cloudinary account configuration, MySQL database hosting and backend deployment. However, if you're interested in exploring the source code, feel free to do so.
 
